@@ -177,6 +177,8 @@ main {
 
 /* ===== Cards ===== */
 .card {
+  position: relative;
+  isolation: isolate;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -187,6 +189,29 @@ main {
 .card:hover {
   border-color: var(--border-light);
   box-shadow: 0 0 0 1px var(--accent-glow), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.card::before, .experience-card::before, .project-item::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(59,130,246,0.4), transparent 50%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+.project-item:hover::before {
+  opacity: 1;
 }
 
 /* ===== Section ===== */
@@ -300,6 +325,8 @@ section h2 {
 
 /* ===== Experience Cards ===== */
 .experience-card {
+  position: relative;
+  isolation: isolate;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -789,6 +816,8 @@ section h2 {
 }
 
 .project-item {
+  position: relative;
+  isolation: isolate;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
