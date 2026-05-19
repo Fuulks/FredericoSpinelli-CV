@@ -76,10 +76,12 @@ class SiteNav extends HTMLElement {
     }).join('');
     
     this.innerHTML = `
-      <div class="nav-inner">
-        ${navLinks}
-        <button id="theme-toggle" aria-label="Toggle theme" style="background:none;border:none;color:var(--text-secondary);cursor:pointer;padding:8px 12px;font-size:1.25rem;">🌙</button>
-      </div>
+      <nav>
+        <div class="nav-inner">
+          ${navLinks}
+          <button id="theme-toggle" aria-label="Toggle theme" style="background:none;border:none;color:var(--text-secondary);cursor:pointer;padding:8px 12px;font-size:1.25rem;">🌙</button>
+        </div>
+      </nav>
     `;
   }
 }
