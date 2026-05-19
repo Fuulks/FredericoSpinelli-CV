@@ -1292,3 +1292,25 @@ footer p {
   height: 100%;
   object-fit: contain;
 }
+
+/* ===== View Transitions ===== */
+@view-transition { navigation: auto; }
+
+/* ===== Scroll Progress Bar ===== */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  width: 100%;
+  transform-origin: left;
+  animation: progress linear;
+  animation-timeline: scroll(root);
+  z-index: 200;
+}
+
+@keyframes progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
