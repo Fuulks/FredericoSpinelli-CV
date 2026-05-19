@@ -76,3 +76,9 @@ if (!CSS.supports || !CSS.supports('animation-timeline', 'view()')) {
     });
   }
 }
+
+// ===== Spotlight Effect =====
+document.addEventListener('mousemove', (e) => {
+  document.body.style.setProperty('--mx', e.clientX + 'px');
+  document.body.style.setProperty('--my', e.clientY + 'px');
+});
