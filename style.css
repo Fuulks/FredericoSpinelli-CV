@@ -156,7 +156,7 @@ header {
 }
 
 /* ===== Nav ===== */
-nav, site-nav {
+nav {
   background: var(--bg-surface);
   border-bottom: 1px solid var(--border);
   padding: 0;
@@ -165,7 +165,7 @@ nav, site-nav {
   z-index: 99;
 }
 
-nav .nav-inner, site-nav .nav-inner {
+nav .nav-inner {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 24px;
@@ -175,10 +175,10 @@ nav .nav-inner, site-nav .nav-inner {
   scrollbar-width: none;
 }
 
-nav .nav-inner::-webkit-scrollbar, site-nav .nav-inner::-webkit-scrollbar { display: none; }
+nav .nav-inner::-webkit-scrollbar { display: none; }
 .nav .nav-inner { -webkit-overflow-scrolling: touch; }
 
-nav a, site-nav a {
+nav a {
   color: var(--text-muted);
   padding: 16px 20px;
   font-size: 0.875rem;
@@ -188,17 +188,17 @@ nav a, site-nav a {
   border-bottom: 2px solid transparent;
 }
 
-nav a:hover, site-nav a:hover {
+nav a:hover {
   color: var(--text-primary);
   background: var(--bg-hover);
 }
 
-nav a.active, site-nav a.active {
+nav a.active {
   color: var(--accent);
   border-bottom-color: var(--accent);
 }
 
-nav a.contact-btn, site-nav a.contact-btn {
+nav a.contact-btn {
   color: var(--accent);
   border: 1px solid var(--accent);
   border-radius: var(--radius-sm);
@@ -207,7 +207,7 @@ nav a.contact-btn, site-nav a.contact-btn {
   transition: all var(--transition);
 }
 
-nav a, site-nav a.contact-btn, site-nav a.contact-btn:hover, site-nav a.contact-btn:hover {
+nav a.contact-btn:hover {
   background: var(--accent);
   color: var(--bg-primary);
 }
