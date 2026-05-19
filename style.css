@@ -1330,7 +1330,6 @@ html {
 }
 
 /* ===== View Transitions ===== */
-/* @view-transition { navigation: auto; } */
 
 /* ===== Scroll Progress Bar ===== */
 #scroll-progress {
@@ -1546,9 +1545,6 @@ html {
 }
 
 /* ===== Prevent FOUC (Flash of Unstyled Content) ===== */
-body.wc-loading {
-  opacity: 0;
-}
 
 /* Ensure site-nav and site-footer display as block by default */
 site-nav, site-footer, site-header {
@@ -1560,33 +1556,14 @@ site-nav nav {
   display: block;
 }
 
-/* ===== Debug: Ensure nav displays ===== */
-site-nav {
-  display: block !important;
-  contain: layout style;
-}
-
 site-nav nav {
   display: flex !important;
   flex-wrap: wrap;
 }
 
 /* ===== View Transitions: Exclude Header/Nav ===== */
-site-header, site-nav, header, nav {
-  view-transition-name: none;
-}
 
 /* Only animate the main content area */
-main {
-  view-transition-name: main-content;
-}
 
-::view-transition-old(main-content) {
-  animation: fade-out 150ms ease;
-}
-::view-transition-new(main-content) {
-  animation: fade-in 200ms ease;
-}
-
-@keyframes fade-out { to { opacity: 0; } }
-@keyframes fade-in { from { opacity: 0; } }
+ }
+ }
