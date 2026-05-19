@@ -1,3 +1,20 @@
+// ===== Theme Toggle =====
+(function() {
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = saved || (prefersDark ? 'dark' : 'dark');
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+
+document.addEventListener('click', (e) => {
+  if (e.target.id === 'theme-toggle') {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    e.target.textContent = next === 'dark' ? '🌙' : '☀️';
+  }
+});
 // ===== Custom Elements =====
 
 class SiteHeader extends HTMLElement {
@@ -39,6 +56,7 @@ class SiteNav extends HTMLElement {
     this.innerHTML = `
       <div class="nav-inner">
         ${navLinks}
+        <button id="theme-toggle" aria-label="Toggle theme" style="background:none;border:none;color:var(--text-secondary);cursor:pointer;padding:8px 12px;font-size:1.25rem;">🌙</button>
       </div>
     `;
   }
