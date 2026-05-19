@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fuulks.github.io/FredericoSpinelli-CV/sitemap.xml
