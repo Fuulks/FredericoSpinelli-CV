@@ -950,6 +950,24 @@ footer p {
   font-size: 0.8125rem;
 }
 
+/* ===== Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+*:focus {
+  scroll-margin-top: 100px;
+}
+
 /* ===== Mobile Responsive ===== */
 @media (max-width: 768px) {
   h1 { font-size: 1.75rem; }
