@@ -1,3 +1,24 @@
+// ===== Prevent FOUC (Flash of Unstyled Content) =====
+(function() {
+  // Hide body until all custom elements are defined
+  document.body.classList.add('wc-loading');
+  
+  // Wait for all custom elements to be defined
+  const undefinedElements = [...document.querySelectorAll(':not(:defined)')];
+  
+  if (undefinedElements.length === 0) {
+    document.body.classList.remove('wc-loading');
+  } else {
+    Promise.allSettled(
+      undefinedElements.map(el => customElements.whenDefined(el.localName))
+    ).then(() => {
+      document.body.classList.remove('wc-loading');
+    });
+    
+    // Fallback: show page after 500ms even if components fail
+    setTimeout(() => document.body.classList.remove('wc-loading'), 500);
+  }
+})();
 // ===== Theme Toggle =====
 (function() {
   const saved = localStorage.getItem('theme');

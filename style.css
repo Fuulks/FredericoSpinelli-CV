@@ -1543,3 +1543,18 @@ html {
     grid-column: span 1;
   }
 }
+
+/* ===== Prevent FOUC (Flash of Unstyled Content) ===== */
+body.wc-loading {
+  opacity: 0;
+}
+
+/* Ensure site-nav and site-footer display as block by default */
+site-nav, site-footer, site-header {
+  display: block;
+}
+
+/* nav-specific overrides */
+site-nav nav {
+  display: block;
+}
