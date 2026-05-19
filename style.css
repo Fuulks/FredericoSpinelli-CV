@@ -1155,3 +1155,35 @@ footer p {
 .back-link:hover {
   color: var(--accent);
 }
+
+/* ===== Skills Preview (index) ===== */
+.skills-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.skill-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.skill-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-item p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .skills-preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
