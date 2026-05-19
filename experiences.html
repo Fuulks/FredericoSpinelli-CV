@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expériences — Frederico Spinelli</title>
+    <title>Experience — Frederico Spinelli</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +22,11 @@
 
     <nav>
         <div class="nav-inner">
-            <a href="index.html">Profil</a>
+            <a href="index.html">Profile</a>
             <a href="experiences.html" class="active">Experience</a>
-            <a href="competences.html">Compériences</a>
+            <a href="competences.html">Skills</a>
             <a href="softskills.html">Soft Skills</a>
-            <a href="portfolio.html">TraceWire</a>
+            <a href="portfolio.html">Projects</a>
             <a href="blog.html">Blog</a>
             <a href="contact.html" class="contact-btn">Contact</a>
         </div>
@@ -44,73 +44,153 @@
                     <div class="exp-title-block">
                         <h3>IT Support Engineer — Apprentice</h3>
                         <p class="company">Contentsquare</p>
-                        <p class="exp-date">2025 — Present</p>
+                        <p class="exp-date">09/2025 — Present</p>
                     </div>
                     <div class="exp-location">
                         <span>📍 Paris, France</span>
                     </div>
                 </div>
                 <div class="exp-details">
-                    <p><strong>Education:</strong> BTS SIO option SLAM à l'IPI (Institut Poly-Informatique, Paris 10e)</p>
+                    <p><strong>Education:</strong> BTS SIO option SLAM at IPI (Paris)</p>
                     <p><strong>Supervisor:</strong> Arnaud Hery, IT Support Lead A</p>
+                    <p><strong>Key achievements:</strong></p>
+                    <ul>
+                        <li>Content Caching solution: -40% WAN bandwidth for 500+ endpoints</li>
+                        <li>Led Sophos → CrowdStrike Falcon migration</li>
+                        <li>Managed 300+ decommissionings (RIF) with zero incidents</li>
+                        <li>Designed ITSync: Workday/Jamf/Intune synchronization for automated fleet compliance</li>
+                    </ul>
                     <p><strong>Main missions:</strong></p>
                     <ul>
-                        <li>Gestion du parc informatique (1000+ machines: macOS, Windows, Linux)</li>
-                        <li>Support utilisateur N1/N2 via Jira et IT Bar</li>
-                        <li>Déploiement workstation (onboarding/offboarding)</li>
-                        <li>Automation ITSync, asset management Snipe-IT</li>
-                        <li>Infrastructure (Apple Content Caching, n8n)</li>
+                        <li>L1/L2 IT support for 14 offices internationally (macOS/Windows), first-contact resolution via Jira (P0–P3 SLAs)</li>
+                        <li>Onboarding/offboarding: Okta provisioning (SSO/MFA), automated workstation deployment via Jamf Pro</li>
+                        <li>Endpoint security enforcement: Sophos/CrowdStrike, encryption, MDM policies</li>
+                        <li>SaaS license management: Google Workspace, Slack, Atlassian, AWS via Okta</li>
+                        <li>Fleet management (1000+ machines): asset lifecycle, provisioning, decommissioning</li>
+                        <li>Network troubleshooting via Meraki dashboard</li>
                     </ul>
                 </div>
                 <div class="tags">
                     <span>Jamf Pro</span>
                     <span>Intune</span>
+                    <span>Okta</span>
+                    <span>CrowdStrike</span>
                     <span>Snipe-IT</span>
-                    <span>Apple Business Manager</span>
-                    <span>Docker</span>
+                    <span>Jira</span>
+                    <span>Meraki</span>
                     <span>Python</span>
                 </div>
             </article>
 
+            <article class="experience-card">
+                <div class="exp-header">
+                    <div class="exp-logo">
+                        <img src="profile.jpg" alt="SCC France">
+                    </div>
+                    <div class="exp-title-block">
+                        <h3>IT Technician</h3>
+                        <p class="company">SCC France — Lieusaint</p>
+                        <p class="exp-date">07/2025 — 09/2025</p>
+                    </div>
+                    <div class="exp-location">
+                        <span>📍 Lieusaint, France</span>
+                    </div>
+                </div>
+                <div class="exp-details">
+                    <p>Preparation and deployment of 3,000+ Windows 11 workstations for enterprise clients.</p>
+                    <ul>
+                        <li>System image installation and standardized software configuration</li>
+                        <li>Quality control and functional testing</li>
+                        <li>Hardware packaging and logistics</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span>Windows 11</span>
+                    <span>Deployment</span>
+                    <span>QC Testing</span>
+                </div>
+            </article>
 
+            <article class="experience-card">
+                <div class="exp-header">
+                    <div class="exp-logo">
+                        <img src="profile.jpg" alt="CH Sud Seine">
+                    </div>
+                    <div class="exp-title-block">
+                        <h3>Sterilization Technician</h3>
+                        <p class="company">CH Sud Seine et Marne — Fontainebleau</p>
+                        <p class="exp-date">03/2024 — 04/2025</p>
+                    </div>
+                    <div class="exp-location">
+                        <span>📍 Fontainebleau, France</span>
+                    </div>
+                </div>
+                <div class="exp-details">
+                    <p>Diagnosis and resolution of technical issues for medical equipment.</p>
+                    <ul>
+                        <li>Washer-Disinfectors, Matachana Autoclaves maintenance</li>
+                        <li>Traceability and procedure management: SPMI, Optim</li>
+                        <li>Teamwork under strict protocols: HAS, ANSM safety/hygiene standards</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span>Medical IT</span>
+                    <span>Maintenance</span>
+                    <span>Compliance</span>
+                </div>
+            </article>
         </section>
 
         <section class="timeline-section">
-            <h2>Key Missions — Contentsquare</h2>
+            <h2>Key Projects — Contentsquare</h2>
             <div class="timeline">
                 <article class="timeline-item">
                     <div class="timeline-content">
-                        <h3>ITSync — Dashboard de Conformité Multi-MDM</h3>
-                        <p class="timeline-date">2026</p>
-                        <p>Application full-stack Python/Streamlit synchronisant Jamf Pro, Snipe-IT, Okta. Health Score 0-100% basé sur enrollment MDM, FileVault, EDR Crowdstrike, version OS. Détection automatique d'écarts.</p>
+                        <h3>ITSync — Multi-MDM Compliance Dashboard</h3>
+                        <p class="timeline-date">2025-2026</p>
+                        <p>Full-stack Python/Streamlit tool synchronizing Workday, Jamf Pro, Intune. Health Score dashboard for automated fleet compliance (ITAM). Detects enrollment gaps, encryption status, EDR presence.</p>
                     </div>
                 </article>
                 <article class="timeline-item">
                     <div class="timeline-content">
                         <h3>Apple Content Caching Server</h3>
                         <p class="timeline-date">2025</p>
-                        <p>Déploiement Mac Mini M2 pour cache local macOS/App Store/Jamf. Réduction 50-90% trafic WAN, téléchargement 3x-10x plus rapide.</p>
+                        <p>Mac Mini M2 deployment for local caching. Reduced WAN bandwidth by 40% for 500+ endpoints. Download speed 3x-10x faster.</p>
                     </div>
                 </article>
                 <article class="timeline-item">
                     <div class="timeline-content">
-                        <h3>n8n Serveur Local + PoC Agent IA</h3>
+                        <h3>Sophos → CrowdStrike Migration</h3>
                         <p class="timeline-date">2025</p>
-                        <p>Déploiement n8n Docker auto-hébergé. PoC agent conversationnel Gemini 3.5 orchestrant Google Workspace, recherche web, RAG PostgreSQL.</p>
+                        <p>Led endpoint security migration across 1000+ machines. Zero downtime, full compliance maintained throughout.</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>RIF Decommissioning (300+ machines)</h3>
+                        <p class="timeline-date">2025</p>
+                        <p>Managed mass fleet decommissioning during restructuring. Zero incidents, full data security compliance.</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>n8n Server + AI Agent PoC</h3>
+                        <p class="timeline-date">2025</p>
+                        <p>Self-hosted n8n Docker deployment. PoC: Gemini 3.5 agent orchestrating Google Workspace, web search, RAG PostgreSQL.</p>
                     </div>
                 </article>
                 <article class="timeline-item">
                     <div class="timeline-content">
                         <h3>SnipeMate Integration</h3>
                         <p class="timeline-date">2025</p>
-                        <p>Intégration iPad avec Snipe-IT pour inventaire physique via QR codes. Elimination erreurs saisie, gain temps sur audits.</p>
+                        <p>iPad QR code scanning with Snipe-IT. Eliminated manual data entry errors, faster physical audits.</p>
                     </div>
                 </article>
                 <article class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Déploiement Audiovisuel</h3>
+                        <h3>AV Deployment</h3>
                         <p class="timeline-date">2025</p>
-                        <p>Configuration Poly X30, DTEN D7X, Crestron TSS-770/1070, Blackmagic ATEM Mini Pro pour événements internes (All Hands, Zoom Webinar).</p>
+                        <p>Poly X30, DTEN D7X, Crestron TSS, Blackmagic ATEM for internal events and Zoom Webinar.</p>
                     </div>
                 </article>
             </div>
@@ -120,13 +200,18 @@
             <h2>Education</h2>
             <article class="education-item">
                 <h3>BTS SIO option SLAM</h3>
-                <p class="edu-detail">Institut Poly-Informatique (IPI), Paris — 2025-2026</p>
-                <p>Technician Systems, Networks and Security — Titre RNCP Level V</p>
+                <p class="edu-detail">Ecole IPI Paris, groupe IGENSIA — 2025-2026</p>
+                <p>Technician Systems, Networks and Security — RNCP Level V</p>
             </article>
             <article class="education-item">
-                <h3>Remise à Niveau Universitaire</h3>
+                <h3>D.U Passeport pour Réussir et s'Orienter</h3>
                 <p class="edu-detail">Université de Paris Cité — 2022-2023</p>
-                <p>Technical preparation year</p>
+                <p>Grade: 15.9/20 — Technical preparation year</p>
+            </article>
+            <article class="education-item">
+                <h3>Bachelor in Information Systems</h3>
+                <p class="edu-detail">Universidade Potigar, Brazil — 2018-2019</p>
+                <p>Information Systems</p>
             </article>
         </section>
     </main>
