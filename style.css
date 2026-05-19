@@ -1206,3 +1206,22 @@ footer p {
 .highlight-icon {
   font-size: 1rem;
 }
+
+/* ===== Experience Card Logos ===== */
+.exp-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: white;
+}
+
+.exp-logo img, .exp-logo svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
