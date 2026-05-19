@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Automated Our Inventory Audits — Frederico Spinelli</title>
+    <meta name="description" content="Building SnipeSync - a local web app that bridges QR scanner data with Snipe-IT API to automate inventory audits">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Frederico Spinelli</h1>
+                <p class="subtitle">IT Support Engineer @ Contentsquare</p>
+            </div>
+            <div class="header-contact">
+                <a href="mailto:fredericospinelli@contentsquare.com">fredericospinelli@contentsquare.com</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html">Profile</a>
+            <a href="../experiences.html">Experience</a>
+            <a href="../competences.html">Skills</a>
+            <a href="../softskills.html">Soft Skills</a>
+            <a href="../portfolio.html">Projects</a>
+            <a href="../blog.html" class="active">Blog</a>
+            <a href="../contact.html" class="contact-btn">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <article class="post-content">
+            <header class="post-header">
+                <span class="post-date">July 10, 2025</span>
+                <h1>How I Automated Our Inventory Audits in My First 3 Months of Apprenticeship</h1>
+                <div class="post-tags">
+                    <span class="tag">automation</span>
+                    <span class="tag">snipe-it</span>
+                    <span class="tag">python</span>
+                </div>
+            </header>
+            
+            <div class="post-body">
+                <p><strong>Disclaimer:</strong> As this application was developed for internal use at my company, I cannot share the source code or screenshots of the live interface to protect sensitive data. This article focuses on the architecture, logic, and problem-solving approach I used to build the solution.</p>
+
+                <p>I started my apprenticeship as an IT Support Engineer four months ago. Like many people entering the field, I came in with a head full of theory—OSI models, networking basics, and coding syntax—but very little "production" experience.</p>
+
+                <p>A few weeks in, I sat down with my manager to discuss what kind of projects I could handle beyond standard helpdesk tickets. He pointed out a glaring inefficiency in our workflow.</p>
+
+                <p>We had QR codes on every company asset. We had a barcode scanner. We had a database (Snipe-IT). But the process of verifying them was painful. We were exporting CSVs from the database, typing serial numbers into spreadsheets, and spending hours writing Excel formulas to cross-reference the two.</p>
+
+                <p>He said:</p>
+
+                <blockquote>"I'd love to scan assets put that csv somewhere push a button and the work is done."</blockquote>
+
+                <p>Here is how I took that idea and built <strong>SnipeSync</strong>.</p>
+
+                <h2>The Problem: The "Spreadsheet Shuffle"</h2>
+
+                <p>The issue wasn't the tools; it was the lack of connection between them.</p>
+
+                <p>Every time we did an audit, we had to:</p>
+                <ol>
+                    <li>Export the entire asset list from Snipe-IT.</li>
+                    <li>Physically type the serial number of laptops and monitors into a CSV.</li>
+                    <li>Manually compare the lists in Excel to find discrepancies.</li>
+                </ol>
+
+                <p>It was slow, boring, and because inventory changes often, the data was very susceptible to human errors caused by the workflow's friction points.</p>
+
+                <h2>My Solution: The Direct API Approach</h2>
+
+                <p>I realized that using Excel as the middleman was the bottleneck. I decided to write a script that connects directly into our IT assets database through the API to act as a bridge between the physical world and our digital records.</p>
+
+                <p>I wrapped this script into a local web application (SnipeSync) to make it user-friendly for the rest of the team.</p>
+
+                <h3>1. Architecture: Security First</h3>
+
+                <p>Since I'm new to the team, I didn't want to be the guy who accidentally leaked data.</p>
+
+                <p>I designed the app to run <strong>100% locally</strong>:</p>
+                <ul>
+                    <li>It doesn't use a third-party cloud</li>
+                    <li>It stores API keys in an encrypted local users.json database</li>
+                    <li>It communicates directly with our internal instance via HTTPS</li>
+                </ul>
+
+                <h3>2. The Logic: Automating the Thinking</h3>
+
+                <p>My manager asked for a "one-click" solution. To do that, the app needed to understand context. I built a "Scope" feature where the user selects their location (e.g., "France, US, UK") and status (e.g., "Stock, Awaiting Broker, Deployed").</p>
+
+                <p>When you upload the scanner data, the app doesn't just list items; it runs a <strong>3-way logic check</strong> against the live API:</p>
+                <ul>
+                    <li>❌ <strong>The Missing:</strong> The API says we have 10 items here, but you only scanned 8. (Potential loss)</li>
+                    <li>⚠️ <strong>The Unexpected:</strong> You scanned an item here, but they don't match your filters. (Data drift)</li>
+                    <li>✅ <strong>The Matched:</strong> The item is physically present and digitally correct</li>
+                </ul>
+
+                <h3>3. Closing the Loop</h3>
+
+                <p>Identifying the problem is only half the job. I built a "Bulk Action" feature to fix the data instantly.</p>
+
+                <p>Instead of manually updating records one by one, the app allows us to:</p>
+                <ul>
+                    <li><strong>Bulk Audit:</strong> Timestamp all matched assets as "Audited Today" in the database</li>
+                    <li><strong>Bulk Move:</strong> Instantly update the location of "Unexpected" items to match reality</li>
+                </ul>
+
+                <h2>The Result</h2>
+
+                <p>What started as a conversation about "making use of QR codes" turned into a fully functional internal tool.</p>
+
+                <p>We moved from a manual, multi-hour Excel process to a streamlined workflow:</p>
+                <ol>
+                    <li>Scan the room</li>
+                    <li>Drag the CSV into SnipeSync</li>
+                    <li>Click "Run Audit"</li>
+                </ol>
+
+                <p>This project taught me the difference between doing a script and automating a business problem. Theory is great, but there is nothing quite like seeing a script you wrote save your team hours of work.</p>
+            </div>
+
+            <footer class="post-footer">
+                <a href="../blog.html" class="back-link">← Back to blog</a>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Frederico Spinelli — IT Support Engineer @ Contentsquare</p>
+    </footer>
+</body>
+</html>
