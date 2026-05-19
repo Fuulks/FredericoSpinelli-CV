@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Frederico Spinelli</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Portfolio</h1>
+                <p class="subtitle">Projets IT — Frederico Spinelli</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html">Profil</a>
+            <a href="experiences.html">Expériences</a>
+            <a href="competences.html">Compétences</a>
+            <a href="softskills.html">Soft Skills</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="contact.html" class="contact-btn">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="portfolio">
+            <h2>TraceWire — Articles & Newsletter</h2>
+            <p class="section-intro">Mon actualité technique sur la cybersécurité, l'infrastructure IT et les nouvelles technologies.</p>
+            
+            <div class="substack-feed">
+                <iframe 
+                    src="https://tracewire.substack.com/embed" 
+                    width="100%" 
+                    height="400" 
+                    style="border:none; background:transparent; border-radius:8px;" 
+                    frameborder="0" 
+                    scrolling="no"
+                    title="TraceWire Substack Newsletter"
+                ></iframe>
+            </div>
+
+            <div class="portfolio-projects">
+                <h3>Projets IT</h3>
+                <div class="projects-list">
+                    <article class="project-item">
+                        <div class="project-icon">🖥️</div>
+                        <div class="project-info">
+                            <h4>Homelab 109.LAB</h4>
+                            <p>Infrastructure complète personnelle avec NAS, clustering Proxmox, pare-feu OPNsense, serveurs Docker, monitoring Uptime Kuma, et sécurité CrowdSec.</p>
+                            <div class="portfolio-tags">
+                                <span>Docker</span>
+                                <span>Proxmox</span>
+                                <span>OPNsense</span>
+                                <span>CrowdSec</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-item">
+                        <div class="project-icon">🤖</div>
+                        <div class="project-info">
+                            <h4>FRIDAY — Personal AI Assistant</h4>
+                            <p>Assistant IA personnel basé sur OpenClaw avec automatisation complète : monitoring infrastructure, gestion de calendrier, scan emails, reminders.</p>
+                            <div class="portfolio-tags">
+                                <span>Python</span>
+                                <span>OpenClaw</span>
+                                <span>Automation</span>
+                                <span>Telegram</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-item">
+                        <div class="project-icon">✈️</div>
+                        <div class="project-info">
+                            <h4>WorldView ADS-B Tracker</h4>
+                            <p>Système de tracking aviation avec dashboard temps réel utilisant dump1090, Docker containerisé, et interface web pour visualiser les vols.</p>
+                            <div class="portfolio-tags">
+                                <span>ADS-B</span>
+                                <span>Docker</span>
+                                <span>RTL-SDR</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-item">
+                        <div class="project-icon">⚡</div>
+                        <div class="project-info">
+                            <h4>n8n AI Workflow Automation</h4>
+                            <p>Platforme d'automatisation professionnelle déployée en entreprise avec intégration d'agents IA pour orchestrer les workflows IT.</p>
+                            <div class="portfolio-tags">
+                                <span>n8n</span>
+                                <span>AI Agents</span>
+                                <span>Dust</span>
+                                <span>API Integration</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Frederico Spinelli — IT Support Engineer @ Contentsquare</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Frederico Spinelli</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Contact</h1>
+                <p class="subtitle">Frederico Spinelli — IT Support Engineer</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html">Profil</a>
+            <a href="experiences.html">Expériences</a>
+            <a href="competences.html">Compétences</a>
+            <a href="softskills.html">Soft Skills</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="contact-btn active">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contact">
+            <h2>Contactez-moi</h2>
+            <p class="section-intro">Vous avez un projet IT, une question technique ou souhaitez simplement échanger ? N'hésitez pas à me contacter.</p>
+            
+            <form action="#" method="post" class="contact-form" name="contact-form" id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prenom">Prénom <span class="required">*</span></label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nom">Nom <span class="required">*</span></label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="entreprise">Entreprise</label>
+                    <input type="text" id="entreprise" name="entreprise" placeholder="Votre entreprise (optionnel)">
+                </div>
+
+                <div class="form-group">
+                    <label for="sujet">Sujet <span class="required">*</span></label>
+                    <select id="sujet" name="sujet" required>
+                        <option value="">Sélectionnez un sujet</option>
+                        <option value="support">Support IT</option>
+                        <option value="consulting">Consulting / Projet</option>
+                        <option value="collaboration">Collaboration</option>
+                        <option value="tracewire">TraceWire Newsletter</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="8" placeholder="Décrivez votre projet ou question en détail..." required></textarea>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn">
+                        <span>Envoyer le message</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                    <p class="form-note">* Champ obligatoire</p>
+                </div>
+            </form>
+
+            <div class="contact-alternatives">
+                <h3>Autres moyens de contact</h3>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <span class="method-icon">✉️</span>
+                        <div class="method-info">
+                            <h4>Email Professionnel</h4>
+                            <a href="mailto:fredericospinelli@contentsquare.com">fredericospinelli@contentsquare.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <span class="method-icon">📬</span>
+                        <div class="method-info">
+                            <h4>TraceWire Substack</h4>
+                            <a href="https://tracewire.substack.com" target="_blank">tracewire.substack.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <span class="method-icon">📍</span>
+                        <div class="method-info">
+                            <h4>Localisation</h4>
+                            <p>Paris, France — Ouvert au télétravail</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Frederico Spinelli — IT Support Engineer @ Contentsquare</p>
+    </footer>
+</body>
+</html>

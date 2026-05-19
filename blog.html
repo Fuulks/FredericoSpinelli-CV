@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Frederico Spinelli</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Frederico Spinelli</h1>
+                <p class="subtitle">IT Support Engineer @ Contentsquare</p>
+            </div>
+            <div class="header-contact">
+                <a href="mailto:fredericospinelli@contentsquare.com">fredericospinelli@contentsquare.com</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html">Profil</a>
+            <a href="experiences.html">Expériences</a>
+            <a href="competences.html">Compétences</a>
+            <a href="softskills.html">Soft Skills</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="contact.html" class="contact-btn">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="blog-hero">
+            <h2>Blog</h2>
+            <p class="tagline">Thoughts on IT, automation, cybersecurity, and homelabbing</p>
+        </section>
+
+        <section class="posts-list" id="posts">
+            <!-- Posts will be listed here dynamically -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Frederico Spinelli — IT Support Engineer @ Contentsquare</p>
+    </footer>
+
+    <script>
+        // Load posts from the posts/ directory
+        async function loadPosts() {
+            const postsContainer = document.getElementById('posts');
+            
+            // Post metadata - update this when adding new posts
+            const posts = [
+                {
+                    slug: '2026-05-19-welcome-to-my-blog',
+                    title: 'Welcome to My Blog',
+                    date: '2026-05-19',
+                    excerpt: 'Moving away from Substack to host my own content. Here I\'ll share thoughts on IT, automation, homelab projects, and more.',
+                    tags: ['intro', 'personal']
+                }
+            ];
+
+            if (posts.length === 0) {
+                postsContainer.innerHTML = '<p class="no-posts">No posts yet. Check back soon!</p>';
+                return;
+            }
+
+            postsContainer.innerHTML = posts.map(post => `
+                <article class="post-card">
+                    <div class="post-meta">
+                        <span class="post-date">${formatDate(post.date)}</span>
+                        <span class="post-tags">${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}</span>
+                    </div>
+                    <h3 class="post-title"><a href="posts/${post.slug}.html">${post.title}</a></h3>
+                    <p class="post-excerpt">${post.excerpt}</p>
+                    <a href="posts/${post.slug}.html" class="read-more">Lire la suite →</a>
+                </article>
+            `).join('');
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('fr-FR', { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric' 
+            });
+        }
+
+        loadPosts();
+    </script>
+</body>
+</html>

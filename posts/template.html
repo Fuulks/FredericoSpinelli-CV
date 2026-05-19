@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} — Frederico Spinelli</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Frederico Spinelli</h1>
+                <p class="subtitle">IT Support Engineer @ Contentsquare</p>
+            </div>
+            <div class="header-contact">
+                <a href="mailto:fredericospinelli@contentsquare.com">fredericospinelli@contentsquare.com</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html">Profil</a>
+            <a href="../experiences.html">Expériences</a>
+            <a href="../competences.html">Compétences</a>
+            <a href="../softskills.html">Soft Skills</a>
+            <a href="../portfolio.html">Portfolio</a>
+            <a href="../blog.html" class="active">Blog</a>
+            <a href="../contact.html" class="contact-btn">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <article class="post-content">
+            <header class="post-header">
+                <span class="post-date">{{DATE}}</span>
+                <h1>{{TITLE}}</h1>
+                <div class="post-tags">
+                    {{TAGS}}
+                </div>
+            </header>
+            
+            <div class="post-body">
+                {{CONTENT}}
+            </div>
+
+            <footer class="post-footer">
+                <a href="../blog.html" class="back-link">← Retour au blog</a>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Frederico Spinelli — IT Support Engineer @ Contentsquare</p>
+    </footer>
+</body>
+</html>
