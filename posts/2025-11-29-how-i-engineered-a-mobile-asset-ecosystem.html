@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Engineered a Mobile Asset Ecosystem — Frederico Spinelli</title>
+    <meta name="description" content="Building SnipeMate + SnipeSync: A complete mobile-first logistics workflow for IT asset management">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Frederico Spinelli</h1>
+                <p class="subtitle">IT Support Engineer @ Contentsquare</p>
+            </div>
+            <div class="header-contact">
+                <a href="mailto:fredericospinelli@contentsquare.com">fredericospinelli@contentsquare.com</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html">Profile</a>
+            <a href="../experiences.html">Experience</a>
+            <a href="../competences.html">Skills</a>
+            <a href="../softskills.html">Soft Skills</a>
+            <a href="../portfolio.html">Projects</a>
+            <a href="../blog.html" class="active">Blog</a>
+            <a href="../contact.html" class="contact-btn">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <article class="post-content">
+            <header class="post-header">
+                <span class="post-date">November 29, 2025</span>
+                <h1>How I Engineered a Mobile Asset Ecosystem</h1>
+                <div class="post-tags">
+                    <span class="tag">asset-management</span>
+                    <span class="tag">snipemate</span>
+                    <span class="tag">jamf</span>
+                </div>
+            </header>
+            
+            <div class="post-body">
+                <p><img src="img/mobile-asset-1.jpeg" alt="Mobile Asset Ecosystem" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
+
+                <p>If you work in IT, you're familiar with "Data Drift." It's that creeping discrepancy between where your physical assets actually are and where your database says they are.</p>
+
+                <p>I realized that fixing this required a two-pronged approach. First, I needed to unchain the staff from their desks for daily tasks. Second, I needed a way to reconcile massive amounts of data instantly for audits.</p>
+
+                <p>To solve this, I built and implemented two synergistic tools: <strong>SnipeMate</strong> (Mobile Operations) and <strong>SnipeSync</strong> (Web Reconciliation).</p>
+
+                <p>This article breaks down <strong>SnipeMate: The Mobile Solution.</strong> Here's how I engineered the mobile-first logistics workflow using SnipeMate and Jamf.</p>
+
+                <h2>1. The Pain Points: Why I Built This</h2>
+
+                <p>Before I intervened, our high-volume logistics suffered from a "Stop-and-Go" workflow. I identified three main friction points:</p>
+
+                <p><img src="img/mobile-asset-2.jpeg" alt="Pain Points" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
+
+                <ul>
+                    <li><strong>The Physical Gap:</strong> I watched staff stop fieldwork, open their laptops, log in, search for an asset, and then update the status. It was inefficient.</li>
+                    <li><strong>Manual Entry Errors:</strong> I noticed that manually typing long asset tags or serial numbers into a search bar was leading to frequent transcription errors.</li>
+                    <li><strong>The "VLOOKUP" Method:</strong> The process was often reduced to taking two or more exports and manually verifying items with VLOOKUP, which forced me to reconcile data later.</li>
+                </ul>
+
+                <p>I needed a way to verify status (e.g., "Awaiting Broker") and assign assets to users without ever leaving the location of the equipment.</p>
+
+                <h2>2. The Solution: SnipeMate + Mobile Scanning</h2>
+
+                <p>I selected SnipeMate to act as the mobile bridge. By configuring it to connect securely to the Snipe-IT JSON REST API, I unlocked capabilities that completely changed our operational speed.</p>
+
+                <p><img src="img/mobile-asset-3.jpeg" alt="SnipeMate Configuration" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
+
+                <h3>Key Capabilities I Enabled</h3>
+                <ul>
+                    <li><strong>Barcode/QR Scanning:</strong> I leveraged the iPad's camera to instantly pull up records, eliminating typos.</li>
+                    <li><strong>Real-Time Verification:</strong> I removed the need for spreadsheet reconciliation; status updates now happen on the fly via the API.</li>
+                    <li><strong>Session Persistence:</strong> I set up API injection to save user sessions, meaning staff don't have to constantly re-authenticate during a shift.</li>
+                </ul>
+
+                <h2>3. Technical Implementation: Jamf & The Shared iPad</h2>
+
+                <p>Selecting the app was only half the battle; I needed a secure, manageable way to deploy it. I chose a Shared iPad deployment managed via Jamf Pro.</p>
+
+                <h3>My Configuration</h3>
+
+                <p>I utilized PreStage Enrollment to enable multi-user profiles. This was crucial because it allowed different members of the team to use the same physical device while keeping their accounts and sessions distinct.</p>
+                <ul>
+                    <li><strong>Device Management:</strong> I provisioned a Shared iPad and placed it within a Static Group I created: "IT Team Managed iPad".</li>
+                    <li><strong>Profiles:</strong> I built Mobile Application Management (MAM) profiles for each team member.</li>
+                    <li><strong>Deployment:</strong> I pushed the apps via Apple Business Manager (ABM) Volume Purchase Program (VPP).</li>
+                </ul>
+
+                <h2>4. The Workflows I Designed</h2>
+
+                <p>The most significant impact has been on daily operations. I designed two specific standard operating procedures (SOPs) for the new tools:</p>
+
+                <h3>Workflow A: The Asset Check-In</h3>
+                <p><strong>Goal:</strong> Receiving a machine and returning it to stock.</p>
+                <ol>
+                    <li>Receive the machine.</li>
+                    <li>Log in to your specific profile on the Shared iPad.</li>
+                    <li>Open SnipeMate and select the Scanner in the search bar.</li>
+                    <li>Scan the asset's QR Code.</li>
+                    <li>Tap Check-In.</li>
+                    <li>Verify the asset profile data is correct on screen.</li>
+                    <li>Place asset back in Stock.</li>
+                </ol>
+
+                <h3>Workflow B: The Asset Check-Out</h3>
+                <p><strong>Goal:</strong> Preparing a machine for onboarding or a swap.</p>
+                <ol>
+                    <li>Go to Stock to retrieve the machine.</li>
+                    <li>Log in to the iPad and open SnipeMate.</li>
+                    <li>Scan the QR code of the chosen machine.</li>
+                    <li>Tap Check-Out.</li>
+                    <li>Assign the specific employee who will receive the machine immediately.</li>
+                    <li>Proceed with physical preparation/handover.</li>
+                </ol>
+
+                <h2>5. Closing the Loop: Integration with SnipeSync</h2>
+
+                <p>While SnipeMate solved the "tactical" day-to-day movement of assets, I needed a separate solution for the "strategic" heavy lifting—massive quarterly audits and deep reconciliation.</p>
+
+                <p>This is where <strong>SnipeSync</strong> comes in.</p>
+
+                <p><img src="img/mobile-asset-4.jpeg" alt="SnipeSync Integration" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
+
+                <p>SnipeSync is a custom web application I developed (using Python and Streamlit) that works in tandem with the mobile workflow. While SnipeMate handles the individual item updates in the field, SnipeSync consumes bulk scan data to perform intelligent reconciliation against the database—identifying drift, missing items, and unexpected assets in seconds.</p>
+
+                <p>The two tools form a complete ecosystem: <strong>SnipeMate</strong> keeps the data accurate in real-time, and <strong>SnipeSync</strong> proves it during the audit.</p>
+
+                <p><em>You can read more about SnipeSync <a href="2025-07-10-how-i-automated-our-inventory-audits.html">HERE</a>.</em></p>
+            </div>
+
+            <footer class="post-footer">
+                <a href="../blog.html" class="back-link">← Back to blog</a>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Frederico Spinelli — IT Support Engineer @ Contentsquare</p>
+    </footer>
+</body>
+</html>
