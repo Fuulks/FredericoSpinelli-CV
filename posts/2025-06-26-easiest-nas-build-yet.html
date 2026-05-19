@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easiest NAS Build Yet — Frederico Spinelli</title>
+    <meta name="description" content="Building a budget NAS with an old laptop and CasaOS for a friend's music collection">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Frederico Spinelli</h1>
+                <p class="subtitle">IT Support Engineer @ Contentsquare</p>
+            </div>
+            <div class="header-contact">
+                <a href="mailto:fredericospinelli@contentsquare.com">fredericospinelli@contentsquare.com</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html">Profile</a>
+            <a href="../experiences.html">Experience</a>
+            <a href="../competences.html">Skills</a>
+            <a href="../softskills.html">Soft Skills</a>
+            <a href="../portfolio.html">Projects</a>
+            <a href="../blog.html" class="active">Blog</a>
+            <a href="../contact.html" class="contact-btn">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <article class="post-content">
+            <header class="post-header">
+                <span class="post-date">June 26, 2025</span>
+                <h1>Easiest NAS Build Yet</h1>
+                <div class="post-tags">
+                    <span class="tag">homelab</span>
+                    <span class="tag">DIY</span>
+                    <span class="tag">storage</span>
+                </div>
+            </header>
+            
+            <div class="post-body">
+                <p>Once upon a time, I was deep into one of my projects when a friend gave me a call. He's a DJ, and he was looking for a home server to safely store all his tracks—and we're talking terabytes of music. He asked if I could help him figure out a solution.</p>
+
+                <p>My first answer? A NAS — Network Attached Storage. It's perfect for media storage, backups, or even building a shared workspace across multiple devices.</p>
+
+                <p>Here's the thing: I didn't just tell him to go out and buy something expensive like a Synology.</p>
+
+                <h2>Why Not Just Buy a Synology?</h2>
+
+                <p>Well, for starters: budget. High-end NAS systems can easily cost hundreds of euros, and most of that money goes into features he didn't need.</p>
+
+                <p>His use case was simple:</p>
+                <ul>
+                    <li>Centralized storage</li>
+                    <li>Local access only</li>
+                    <li>Minimal setup and maintenance</li>
+                </ul>
+
+                <p>He also didn't have much technical experience, and I didn't want to set him up with something overly complex. Most importantly, there was no need for enterprise-level features like remote user access, hot-swappable drives, or RAID redundancy. We just needed a reliable, low-cost, and easy-to-use solution.</p>
+
+                <h2>Hardware</h2>
+
+                <p>So I asked him, "Do you have any old machines lying around? Maybe a desktop or a notebook?"</p>
+
+                <p>He replied that he had both. I went over to check them out.</p>
+
+                <p>The desktop had a prehistoric hard drive that sounded like it ran on steam, and the internals weren't much better.</p>
+
+                <p>The notebook, though, had a 350GB SSD and was still kicking.</p>
+
+                <p>Since this was a budget build, the choice was obvious: the notebook — smaller, quieter, more power-efficient. I recommended he pick up three 4TB hard drives, giving him enough space to store everything and room to grow.</p>
+
+                <h2>Software</h2>
+
+                <p>My first instinct was to install OpenMediaVault — a solid and trusted solution in the DIY NAS world. But after some research, I found something even better for non-technical users: <strong>CasaOS</strong>.</p>
+
+                <p>CasaOS is a lightweight home server OS that runs on top of Linux. What makes it stand out is its clean, modern web interface, making server management feel more like configuring a smart home hub than wrangling a Linux terminal.</p>
+
+                <ul>
+                    <li>One-click app install (JellyFin, NextCloud, qBittorrent, etc.)</li>
+                    <li>Built-in Docker</li>
+                    <li>Simple storage manager</li>
+                    <li>Built-in File Sharing (SMB)</li>
+                    <li>Remote access through web dashboard</li>
+                </ul>
+
+                <h2>Setup</h2>
+
+                <p>For the base OS, I went with <strong>Ubuntu Server</strong> — stable, lightweight, and well-documented. Other good options include Debian, AlmaLinux, or DietPi if you need something ultra-minimal.</p>
+
+                <p>The laptop was already connected via Ethernet (highly recommended), which helped ensure a smooth install. During setup, I assigned a static IP so the server would always be reachable on the network.</p>
+
+                <p>Once it was running, I did the usual system prep. Then I installed CasaOS with their official one-liner:</p>
+
+                <pre><code>curl -fsSL https://get.casaos.io | bash</code></pre>
+
+                <p>After a few minutes, we were in the web dashboard, creating a user and setting up the system. No terminal diving required — everything was clean and intuitive.</p>
+
+                <h2>Storage Setup & SMB Access</h2>
+
+                <p>We connected the external hard drives to the laptop via an HDD dock and formatted them to ext4 for compatibility and performance.</p>
+
+                <p>Then I merged the three drives into a single volume using a union filesystem, so they'd appear as one big shared drive inside CasaOS.</p>
+
+                <p>Since SMB (Samba) support is pre-installed in CasaOS, all I had to do was:</p>
+                <ol>
+                    <li>Create Samba user and password</li>
+                    <li>Share the folder</li>
+                    <li>Set permissions</li>
+                </ol>
+
+                <p>On his main PC, my friend was able to connect to the share instantly and pin it to Quick Access in Windows — just like a commercial NAS.</p>
+
+                <h2>The Result</h2>
+
+                <p>A fully functional home server, built with pre-owned hardware and open-source software.</p>
+
+                <p>With Ubuntu Server as the foundation and CasaOS on top, the experience was polished, accessible, and surprisingly powerful.</p>
+
+                <p>The system is:</p>
+                <ul>
+                    <li><strong>Fast</strong></li>
+                    <li><strong>Reliable</strong></li>
+                    <li><strong>Expandable</strong></li>
+                </ul>
+
+                <p>It can handle terabytes of data, enable quick file transfers, and even open the door to future features like a media server, personal cloud, or smart home hub — all without spending a fortune or needing a degree in IT.</p>
+
+                <h2>CLI Appendix</h2>
+
+                <pre><code># Update and upgrade the system
+sudo apt update && sudo apt upgrade -y
+
+# Mount ext4 drives
+sudo mkdir /mnt/music
+sudo mount /dev/sdX1 /mnt/music
+
+# Add to /etc/fstab for automatic mounting
+UUID=XXXX-XXXX /mnt/music ext4 defaults 0 2
+
+# Create Samba user
+sudo smbpasswd -a username</code></pre>
+            </div>
+
+            <footer class="post-footer">
+                <a href="../blog.html" class="back-link">← Back to blog</a>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Frederico Spinelli — IT Support Engineer @ Contentsquare</p>
+    </footer>
+</body>
+</html>
