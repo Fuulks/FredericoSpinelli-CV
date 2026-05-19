@@ -24,13 +24,14 @@
 </head>
 <body>
     <div id="scroll-progress"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <site-header></site-header>
 
     <site-nav></site-nav>
 
-    <main>
-        <section class="contact">
-            <h2>Contact Me</h2>
+    <main id="main-content">
+        <section class="contact" aria-labelledby="contact-me">
+            <h2 id="contact-me">Contact Me</h2>
             <p class="section-intro">Have an IT project, une question technique ou souhaitez simplement échanger ? feel free to reach out.</p>
             
             <form action="#" method="post" class="contact-form" name="contact-form" id="contact-form">
@@ -92,21 +93,21 @@
                         </div>
                     </div>
                     <div class="contact-method">
-                        <span class="method-icon">🐙</span>
+                        <span class="method-icon"><span aria-hidden="true">🐙</span></span>
                         <div class="method-info">
                             <h4>GitHub</h4>
                             <a href="https://github.com/Fuulks" target="_blank">github.com/Fuulks</a>
                         </div>
                     </div>
                     <div class="contact-method">
-                        <span class="method-icon">💼</span>
+                        <span class="method-icon"><span aria-hidden="true">💼</span></span>
                         <div class="method-info">
                             <h4>LinkedIn</h4>
                             <a href="https://www.linkedin.com/in/fspinellis" target="_blank">linkedin.com/in/fredericospinelli</a>
                         </div>
                     </div>
                     <div class="contact-method">
-                        <span class="method-icon">📍</span>
+                        <span class="method-icon"><span aria-hidden="true">📍</span></span>
                         <div class="method-info">
                             <h4>Localisation</h4>
                             <p>Paris, France — Ouvert télétravail</p>

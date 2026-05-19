@@ -46,11 +46,12 @@
 </head>
 <body>
     <div id="scroll-progress"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <site-header></site-header>
 
     <site-nav></site-nav>
 
-    <main>
+    <main id="main-content">
         <section class="profile" id="profil">
             <img src="profile.jpg" alt="Frederico Spinelli" class="profile-photo">
             <div class="profile-text">
@@ -59,25 +60,25 @@
                 <p>Specialized in multi-site IT operations with solid experience in L1/L2 support and infrastructure security. Automation-driven professional with multi-OS proficiency (Windows, macOS, Linux) and quadrilingual (FR, EN, PT, ES).</p>
                 <div class="profile-highlights">
                     <div class="highlight-item">
-                        <span class="highlight-icon">📉</span>
+                        <span class="highlight-icon"><span aria-hidden="true">📉</span></span>
                         <span>Content Caching: -40% WAN for 500+ endpoints</span>
                     </div>
 
                     <div class="highlight-item">
-                        <span class="highlight-icon">✅</span>
+                        <span class="highlight-icon"><span aria-hidden="true">✅</span></span>
                         <span>300+ decommissionings with zero incidents</span>
                     </div>
                 </div>
                 <p>Polyglot: Portuguese (native), French, English, Spanish (C1).</p>
                 <div class="profile-links">
-                    <a href="https://github.com/Fuulks" target="_blank" class="profile-link">🐙 GitHub</a>
-                    <a href="https://www.linkedin.com/in/fspinellis" target="_blank" class="profile-link">💼 LinkedIn</a>
+                    <a href="https://github.com/Fuulks" target="_blank" class="profile-link"><span aria-hidden="true">🐙</span> GitHub</a>
+                    <a href="https://www.linkedin.com/in/fspinellis" target="_blank" class="profile-link"><span aria-hidden="true">💼</span> LinkedIn</a>
                 </div>
             </div>
         </section>
 
-        <section class="about" id="about">
-            <h2>About</h2>
+        <section class="about" id="about" aria-labelledby="about">
+            <h2 id="about">About</h2>
             <p>Non-traditional path to IT: 6 years in retail and grocery, developing skills in team management, problem-solving, and adaptability. In 2022, returned to school at Université de Paris Cité for technical refresher (D.U, 15.9/20).</p>
             <p>Working at Contentsquare on varied missions: fleet management (1000+ machines), workstation deployments, automation (ITSync), and infrastructure projects (Content Caching Server, n8n). Goal: deepen expertise in architecture, MDM scripting, and systems security.</p>
         </section>
@@ -99,8 +100,8 @@
             </div>
         </section>
 
-        <section class="about" id="skills-preview">
-            <h2>Areas of Expertise</h2>
+        <section class="about" id="skills-preview" aria-labelledby="areas-of-expertise">
+            <h2 id="areas-of-expertise">Areas of Expertise</h2>
             <div class="skills-preview-grid">
                 <div class="skill-item">
                     <h3>Fleet Management</h3>

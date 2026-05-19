@@ -24,13 +24,14 @@
 </head>
 <body>
     <div id="scroll-progress"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <site-header></site-header>
 
     <site-nav></site-nav>
 
-    <main>
-        <section class="experiences">
-            <h2>Career Path</h2>
+    <main id="main-content">
+        <section class="experiences" aria-labelledby="career-path">
+            <h2 id="career-path">Career Path</h2>
 
             <article class="experience-card featured">
                 <div class="exp-header">
@@ -43,7 +44,7 @@
                         <p class="exp-date">09/2025 — Present</p>
                     </div>
                     <div class="exp-location">
-                        <span>📍 Paris, France</span>
+                        <span><span aria-hidden="true">📍</span> Paris, France</span>
                     </div>
                 </div>
                 <div class="exp-details">
@@ -77,8 +78,8 @@
                 </div>
             </article>
 
-            <section class="timeline-section">
-                <h2>Key Projects — Contentsquare</h2>
+            <section class="timeline-section" aria-labelledby="key-projects-contentsquare">
+            <h2 id="key-projects-contentsquare">Key Projects — Contentsquare</h2>
                 <div class="timeline">
                     <article class="timeline-item">
                         <div class="timeline-content">
@@ -136,7 +137,7 @@
                         <p class="exp-date">07/2025 — 09/2025</p>
                     </div>
                     <div class="exp-location">
-                        <span>📍 Lieusaint, France</span>
+                        <span><span aria-hidden="true">📍</span> Lieusaint, France</span>
                     </div>
                 </div>
                 <div class="exp-details">
@@ -156,8 +157,8 @@
 
         </section>
 
-        <section class="education-section">
-            <h2>Education</h2>
+        <section class="education-section" aria-labelledby="education">
+            <h2 id="education">Education</h2>
             <article class="education-item">
                 <h3>BTS SIO option SLAM</h3>
                 <p class="edu-detail">Ecole IPI Paris, groupe IGENSIA — 2025-2026</p>

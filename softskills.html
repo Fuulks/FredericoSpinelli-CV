@@ -24,13 +24,14 @@
 </head>
 <body>
     <div id="scroll-progress"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <site-header></site-header>
 
     <site-nav></site-nav>
 
-    <main>
-        <section class="softskills">
-            <h2>Professional Qualities</h2>
+    <main id="main-content">
+        <section class="softskills" aria-labelledby="professional-qualities">
+            <h2 id="professional-qualities">Professional Qualities</h2>
 
             <div class="skills-grid">
                 <div class="skill-category">
@@ -54,7 +55,7 @@
                 </div>
 
                 <div class="skill-category">
-                    <h3>📋 Asset Management</h3>
+                    <h3><span aria-hidden="true">📋</span> Asset Management</h3>
                     <p>1000+ machines, full lifecycle (onboarding → deployed → to reset → broker). Precise inventory and constant updates.</p>
                 </div>
 
@@ -65,26 +66,26 @@
             </div>
         </section>
 
-        <section class="languages-section">
-            <h2>Languages</h2>
+        <section class="languages-section" aria-labelledby="languages">
+            <h2 id="languages">Languages</h2>
             <div class="languages-grid">
                 <div class="language-item">
-                    <span class="lang-flag">🇧🇷</span>
+                    <span class="lang-flag"><span aria-hidden="true">🇧🇷</span></span>
                     <span class="lang-name">Portuguese</span>
                     <span class="lang-level">Native</span>
                 </div>
                 <div class="language-item">
-                    <span class="lang-flag">🇫🇷</span>
+                    <span class="lang-flag"><span aria-hidden="true">🇫🇷</span></span>
                     <span class="lang-name">French</span>
                     <span class="lang-level">C1</span>
                 </div>
                 <div class="language-item">
-                    <span class="lang-flag">🇬🇧</span>
+                    <span class="lang-flag"><span aria-hidden="true">🇬🇧</span></span>
                     <span class="lang-name">English</span>
                     <span class="lang-level">C1</span>
                 </div>
                 <div class="language-item">
-                    <span class="lang-flag">🇪🇸</span>
+                    <span class="lang-flag"><span aria-hidden="true">🇪🇸</span></span>
                     <span class="lang-name">Spanish</span>
                     <span class="lang-level">C1</span>
                 </div>
