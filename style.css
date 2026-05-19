@@ -1570,3 +1570,23 @@ site-nav nav {
   display: flex !important;
   flex-wrap: wrap;
 }
+
+/* ===== View Transitions: Exclude Header/Nav ===== */
+site-header, site-nav, header, nav {
+  view-transition-name: none;
+}
+
+/* Only animate the main content area */
+main {
+  view-transition-name: main-content;
+}
+
+::view-transition-old(main-content) {
+  animation: fade-out 150ms ease;
+}
+::view-transition-new(main-content) {
+  animation: fade-in 200ms ease;
+}
+
+@keyframes fade-out { to { opacity: 0; } }
+@keyframes fade-in { from { opacity: 0; } }

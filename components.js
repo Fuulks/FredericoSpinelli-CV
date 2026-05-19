@@ -1,3 +1,9 @@
+// ===== Theme Setup (must run FIRST before rendering) =====
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+})();
+
 // ===== Prevent FOUC (Flash of Unstyled Content) =====
 (function() {
   // Hide body until all custom elements are defined
@@ -19,13 +25,7 @@
     setTimeout(() => document.body.classList.remove('wc-loading'), 500);
   }
 })();
-// ===== Theme Toggle =====
-(function() {
-  const saved = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const theme = saved || (prefersDark ? 'dark' : 'dark');
-  document.documentElement.setAttribute('data-theme', theme);
-})();
+
 
 document.addEventListener('click', (e) => {
   if (e.target.id === 'theme-toggle') {
