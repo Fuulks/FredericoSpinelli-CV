@@ -100,3 +100,8 @@ document.addEventListener('mousemove', (e) => {
   document.body.style.setProperty('--mx', e.clientX + 'px');
   document.body.style.setProperty('--my', e.clientY + 'px');
 });
+
+// ===== PWA Service Worker =====
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js', { scope: '/FredericoSpinelli-CV/' });
+}
