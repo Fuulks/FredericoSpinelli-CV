@@ -56,3 +56,23 @@ class SiteFooter extends HTMLElement {
 customElements.define('site-header', SiteHeader);
 customElements.define('site-nav', SiteNav);
 customElements.define('site-footer', SiteFooter);
+// ===== Scroll Reveal Fallback (Firefox) =====
+if (!CSS.supports || !CSS.supports('animation-timeline', 'view()')) {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!prefersReduced.matches) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+}
