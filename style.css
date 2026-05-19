@@ -1511,3 +1511,35 @@ html {
 #theme-toggle:hover {
   transform: scale(1.1);
 }
+
+/* ===== Bento Grid Skills Preview ===== */
+.skills-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.skill-item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.skill-item:nth-child(2),
+.skill-item:nth-child(3) {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .skills-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skill-item:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .skill-item:nth-child(2),
+  .skill-item:nth-child(3) {
+    grid-column: span 1;
+  }
+}
