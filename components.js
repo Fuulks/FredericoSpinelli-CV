@@ -35,7 +35,8 @@ class SiteHeader extends HTMLElement {
 
 class SiteNav extends HTMLElement {
   connectedCallback() {
-    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    const currentPage = location.pathname.split('/').pop();
+    const page = currentPage || 'index.html';
     const links = [
       { href: 'index.html', label: 'Profile' },
       { href: 'experiences.html', label: 'Experience' },
@@ -47,7 +48,7 @@ class SiteNav extends HTMLElement {
     ];
     
     const navLinks = links.map(link => {
-      const isActive = link.href === currentPage;
+      const isActive = link.href === page || (page === 'index.html' && link.href === 'index.html');
       const className = link.className ? `${link.className}${isActive ? '' : ''}` : (isActive ? 'active' : '');
       const activeClass = isActive ? ' class="' + className + '"' : (link.className ? ' class="' + link.className + '"' : '');
       return `<a href="${link.href}"${activeClass}>${link.label}</a>`;
