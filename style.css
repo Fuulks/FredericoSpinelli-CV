@@ -1425,3 +1425,43 @@ html {
 @media (hover: none) {
   .spotlight { display: none; }
 }
+
+/* ===== Print Stylesheet ===== */
+@media print {
+  nav, footer, site-nav, site-footer, .skip-link, .spotlight,
+  #scroll-progress, .contact-btn, .profile-links { display: none !important; }
+
+  body {
+    background: white !important;
+    color: #111 !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  * { box-shadow: none !important; text-shadow: none !important; }
+
+  .card, .experience-card, .project-item, .skill-category,
+  .stat-card, .cert-card, .softskill-card {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+    background: none !important;
+  }
+
+  p, li, span { color: #333 !important; }
+
+  a { color: #111 !important; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+  a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+
+  .profile-photo { width: 120px; height: 120px; }
+
+  @page { margin: 1.5cm; }
+
+  .tag, .tool-tag { background: #f0f0f0 !important; color: #333 !important; border-color: #ccc !important; }
+}
