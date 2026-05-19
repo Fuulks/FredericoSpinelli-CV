@@ -55,6 +55,8 @@
 
                 <p>Here's the thing: I didn't just tell him to go out and buy something expensive like a Synology.</p>
 
+                <p><img src="img/nas/laptop-nas-build.jpeg" alt="Laptop NAS build" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
+
                 <h2>Why Not Just Buy a Synology?</h2>
 
                 <p>Well, for starters: budget. High-end NAS systems can easily cost hundreds of euros, and most of that money goes into features he didn't need.</p>
@@ -80,6 +82,8 @@
 
                 <p>Since this was a budget build, the choice was obvious: the notebook — smaller, quieter, more power-efficient. I recommended he pick up three 4TB hard drives, giving him enough space to store everything and room to grow.</p>
 
+                <p><img src="img/nas/hard-drives.jpeg" alt="Hard drives for NAS" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
+
                 <h2>Software</h2>
 
                 <p>My first instinct was to install OpenMediaVault — a solid and trusted solution in the DIY NAS world. But after some research, I found something even better for non-technical users: <strong>CasaOS</strong>.</p>
@@ -94,7 +98,11 @@
                     <li>Remote access through web dashboard</li>
                 </ul>
 
+                <p><img src="img/nas/casaos-dashboard.jpeg" alt="CasaOS dashboard" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
+
                 <h2>Setup</h2>
+
+                <p><img src="img/nas/samba-config.png" alt="Ubuntu Server CLI" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
 
                 <p>For the base OS, I went with <strong>Ubuntu Server</strong> — stable, lightweight, and well-documented. Other good options include Debian, AlmaLinux, or DietPi if you need something ultra-minimal.</p>
 
@@ -103,6 +111,8 @@
                 <p>Once it was running, I did the usual system prep. Then I installed CasaOS with their official one-liner:</p>
 
                 <pre><code>curl -fsSL https://get.casaos.io | bash</code></pre>
+
+                <p><img src="img/nas/casaos-install.webp" alt="CasaOS install" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
 
                 <p>After a few minutes, we were in the web dashboard, creating a user and setting up the system. No terminal diving required — everything was clean and intuitive.</p>
 
@@ -118,6 +128,8 @@
                     <li>Share the folder</li>
                     <li>Set permissions</li>
                 </ol>
+
+                <p><img src="img/nas/smb-share.jpeg" alt="SMB share access" style="max-width: 100%; border-radius: 8px; margin: 1.5rem 0;"></p>
 
                 <p>On his main PC, my friend was able to connect to the share instantly and pin it to Quick Access in Windows — just like a commercial NAS.</p>
 
