@@ -62,7 +62,23 @@ h3 { font-size: 1.25rem; }
 h4 { font-size: 1rem; }
 
 p { color: var(--text-secondary); }
-a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+a { color: var(--accent); text-decoration: none; transition: color var(--transition), background-size 300ms ease; }
+
+.post-body a,
+.footer-content a,
+.blog-content a {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: color var(--transition), background-size 300ms ease;
+}
+
+.post-body a:hover,
+.footer-content a:hover,
+.blog-content a:hover {
+  background-size: 100% 1px;
+}
 a:hover { color: var(--accent-hover); }
 
 strong { color: var(--text-primary); font-weight: 600; }
