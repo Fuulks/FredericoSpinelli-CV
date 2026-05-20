@@ -1544,26 +1544,14 @@ html {
   }
 }
 
-/* ===== Prevent FOUC (Flash of Unstyled Content) ===== */
 
-/* Ensure site-nav and site-footer display as block by default */
+/* ===== Custom Elements — Prevent FOUC ===== */
 site-nav, site-footer, site-header {
   display: block;
 }
 
-/* nav-specific overrides */
+/* nav must be flex for horizontal layout */
 site-nav nav {
-  display: block;
-}
-
-site-nav nav {
-  display: flex !important;
+  display: flex;
   flex-wrap: wrap;
 }
-
-/* ===== View Transitions: Exclude Header/Nav ===== */
-
-/* Only animate the main content area */
-
- }
- }
