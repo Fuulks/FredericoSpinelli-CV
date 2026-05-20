@@ -52,3 +52,32 @@ class SiteFooter extends HTMLElement {
 customElements.define('site-header', SiteHeader);
 customElements.define('site-nav', SiteNav);
 customElements.define('site-footer', SiteFooter);
+
+if (!CSS.supports || !CSS.supports('animation-timeline', 'view()')) {
+ var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+ if (!prefersReduced.matches) {
+ var observer = new IntersectionObserver(function(entries) {
+ entries.forEach(function(entry) {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('visible');
+ observer.unobserve(entry.target);
+ }
+ });
+ }, { threshold: 0.1 });
+ document.querySelectorAll('.reveal-on-scroll').forEach(function(el) { observer.observe(el); });
+ } else {
+ document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
+ el.style.opacity = '1';
+ el.style.transform = 'none';
+ });
+ }
+}
+
+document.addEventListener('mousemove', function(e) {
+ document.body.style.setProperty('--mx', e.clientX + 'px');
+ document.body.style.setProperty('--my', e.clientY + 'px');
+});
+
+if ('serviceWorker' in navigator) {
+ navigator.serviceWorker.register('sw.js', { scope: '/FredericoSpinelli-CV/' });
+}
