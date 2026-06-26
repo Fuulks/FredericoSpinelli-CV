@@ -34,7 +34,7 @@
     <main id="main-content">
         <section class="portfolio" aria-labelledby="professional-projects">
             <h2 id="professional-projects">Professional Projects</h2>
-            <p class="section-intro">Projects conducted during my BTS SIO apprenticeship at Contentsquare.</p>
+            <p class="section-intro">Strategic projects at Contentsquare — 2 Epics delivered and 565+ Jira items resolved across 6 countries.</p>
             
             <div class="portfolio-projects">
                 <div class="projects-list">
@@ -45,6 +45,7 @@
                             <h4>ITSync — Multi-MDM Compliance Dashboard</h4>
                             <p>Full-stack Python/Streamlit application synchronizing Workday, Jamf Pro, and Intune. Generates a Health Score dashboard (0-100%) based on 4 criteria: MDM enrollment, FileVault encryption, EDR Crowdstrike installation, and macOS version. Automatically detects gaps like active accounts for departed employees or machines marked "Stock" but still active in MDM.</p>
                             <p><strong>Stack:</strong> Python 3.11, Streamlit, SQLite, REST APIs (OAuth 2.0 Jamf, Bearer Snipe-IT), Docker</p>
+                            <p><strong>Adopted by:</strong> IT Support, Security, and Systems Engineering teams.</p>
                             <div class="portfolio-tags">
                                 <span>Python</span>
                                 <span>Streamlit</span>
@@ -61,7 +62,8 @@
                         <div class="project-info">
                             <h4>Apple Content Caching Server</h4>
                             <p>Deployed Mac Mini M2 as local cache server for macOS updates, App Store apps, and Jamf packages. Result: 40% reduction in WAN bandwidth, download speed 3x-10x faster for 500+ endpoints in Paris office.</p>
-                            <p>Resolved blocking MDM profile conflict, created Jamf Smart Groups, deployed configuration profiles.</p>
+                            <p>Physical server-bay installation, static IPv4 addressing, parent/peer hierarchy, SSH for headless management. Resolved blocking MDM profile conflict, created Jamf Smart Groups, deployed configuration profiles.</p>
+                            <p><strong>Ref:</strong> ISDSUP-1935, -1939, -1940, -1941, -1942, -1936.</p>
                             <div class="portfolio-tags">
                                 <span>macOS</span>
                                 <span>Jamf Pro</span>
@@ -71,12 +73,13 @@
                         </div>
                     </article>
 
-
                     <article class="project-item reveal-on-scroll">
                         <div class="project-icon"><span aria-hidden="true">📦</span></div>
                         <div class="project-info">
-                            <h4>SnipeMate Integration</h4>
-                            <p>Integrated SnipeMate (iPad app) with Snipe-IT for physical inventory via QR code scanning. Eliminated manual data entry errors, significant time savings on physical audits and broker handoffs (100+ devices).</p>
+                            <h4>SnipeMate — Multi-User iPad Asset Enrollment</h4>
+                            <p>Built mobile (iPad) asset enrollment workflow on Snipe-IT supporting multi-user IT-team profiles. Designed multi-user pre-enrollment stage, created individual Snipe-IT profiles per IT member, generated per-user and test API keys.</p>
+                            <p>Eliminated manual data entry errors, significant time savings on physical audits and broker handoffs (100+ devices).</p>
+                            <p><strong>Ref:</strong> ISDSUP-1938, -1943, -1944, -1945, -1946, -1947.</p>
                             <div class="portfolio-tags">
                                 <span>Snipe-IT</span>
                                 <span>REST API</span>
@@ -87,10 +90,56 @@
                     </article>
 
                     <article class="project-item reveal-on-scroll">
+                        <div class="project-icon"><span aria-hidden="true">🛡️</span></div>
+                        <div class="project-info">
+                            <h4>IT Compliance &amp; Endpoint Security Remediation</h4>
+                            <p>Audit surfaced major endpoint-security gaps: <strong>197 laptops deployed to people no longer with the company</strong>, <strong>59 users with unjustified multiple devices</strong>, and dozens of machines not enrolled in CrowdStrike, JAMF, Intune, or DriveStrike.</p>
+                            <p>Full remediation: Snipe-IT reconciliation, chased unenrolled macOS/Windows/Linux endpoints into their MDM/EDR tools, resolved orphaned-device and duplicate-laptop findings. Closed the gap set — directly reducing attack surface and audit risk.</p>
+                            <p><strong>Ref:</strong> ITSUP-27019 through 27026.</p>
+                            <div class="portfolio-tags">
+                                <span>CrowdStrike</span>
+                                <span>JAMF</span>
+                                <span>Intune</span>
+                                <span>DriveStrike</span>
+                                <span>Compliance</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-item reveal-on-scroll">
+                        <div class="project-icon"><span aria-hidden="true">👥</span></div>
+                        <div class="project-info">
+                            <h4>Employee Lifecycle — Onboarding / Offboarding</h4>
+                            <p>Owned end-to-end IT onboarding and offboarding for continuous global hiring across FR, ES, IT, PL, DE, AU (remote and onsite). Executed <strong>20+ structured tasks</strong> coordinating hardware, identity (Okta/Google), and access across multiple countries and time zones.</p>
+                            <p>New hires operational from day one; leavers had access cleanly revoked — both productivity and security posture maintained across the workforce.</p>
+                            <div class="portfolio-tags">
+                                <span>Okta</span>
+                                <span>Google Workspace</span>
+                                <span>Asset Management</span>
+                                <span>Security</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-item reveal-on-scroll">
+                        <div class="project-icon"><span aria-hidden="true">🎫</span></div>
+                        <div class="project-info">
+                            <h4>High-Volume Incident &amp; Service Request Resolution</h4>
+                            <p>Sustained high-throughput support across the org: <strong>540+ tickets resolved</strong> — 200+ incidents (access loss, VPN, Slack/Okta auth, hardware faults, a faulty Paris office switch port) and 200+ service requests (licenses, app access, peripherals, group/channel management), plus 14 changes.</p>
+                            <p>First-line responder in #halpit; handled escalations when automations failed. Fed recurring patterns back into the strategic projects above.</p>
+                            <div class="portfolio-tags">
+                                <span>Jira</span>
+                                <span>SLA</span>
+                                <span>Multi-country</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-item reveal-on-scroll">
                         <div class="project-icon"><span aria-hidden="true">⚡</span></div>
                         <div class="project-info">
                             <h4>n8n Server + AI Agent PoC</h4>
-                            <p>Self-hosted n8n deployment on Mac Mini M2 (Docker) for IT automation. Proof of Concept: Gemini 3.5 conversational agent orchestrating Google Workspace, web search, and RAG PostgreSQL knowledge base.</p>
+                            <p>Self-hosted n8n deployment on Mac Mini M2 (Docker, PostgreSQL-backed) for IT automation. Proof of Concept: Gemini 3.5 conversational agent orchestrating Google Workspace, web search, and RAG PostgreSQL knowledge base.</p>
                             <div class="portfolio-tags">
                                 <span>n8n</span>
                                 <span>Docker</span>
@@ -105,7 +154,7 @@
                         <div class="project-icon"><span aria-hidden="true">📊</span></div>
                         <div class="project-info">
                             <h4>RIF Decommissioning (300+ machines)</h4>
-                            <p>Managed mass fleet decommissioning during restructuring. Process: account disabling, MDM un enrollment, DriveStrike wipe, physical reset, broker handoff. Zero incidents, full data security compliance.</p>
+                            <p>Managed mass fleet decommissioning during restructuring. Process: account disabling, MDM un-enrollment, DriveStrike wipe, physical reset, broker handoff. Zero incidents, full data security compliance.</p>
                             <div class="portfolio-tags">
                                 <span>Asset Management</span>
                                 <span>Security</span>
