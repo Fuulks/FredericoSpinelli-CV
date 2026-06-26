@@ -15,7 +15,7 @@ document.addEventListener('click', function(e) {
 
 class SiteHeader extends HTMLElement {
  connectedCallback() {
- this.innerHTML = '<header><div class="header-content"><div class="header-text"><h1>Frederico Spinelli</h1><p class="subtitle">IT Support Engineer @ Contentsquare</p></div><div class="header-contact"><a href="mailto:fredericospinelli@contentsquare.com">fredericospinelli@contentsquare.com</a></div></div></header>';
+ this.innerHTML = '<header><div class="header-content"><div class="header-text"><h1>Frederico Spinelli</h1><p class="subtitle">IT Systems Engineer @ Contentsquare</p></div><div class="header-contact"><a href="mailto:fredericospinelli@contentsquare.com">fredericospinelli@contentsquare.com</a></div></div></header>';
  }
 }
 
@@ -45,7 +45,7 @@ class SiteNav extends HTMLElement {
 
 class SiteFooter extends HTMLElement {
  connectedCallback() {
- this.innerHTML = '<footer><p>&copy; ' + new Date().getFullYear() + ' Frederico Spinelli — IT Support Engineer @ Contentsquare</p></footer>';
+ this.innerHTML = '<footer><p>&copy; ' + new Date().getFullYear() + ' Frederico Spinelli — IT Systems Engineer @ Contentsquare</p></footer>';
  }
 }
 
